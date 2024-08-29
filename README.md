@@ -1,79 +1,73 @@
-# Vuetify (Default)
+# Gestión de Productos
 
-This is the official scaffolding tool for Vuetify, designed to give you a head start in building your new Vuetify application. It sets up a base template with all the necessary configurations and standard directory structure, enabling you to begin development without the hassle of setting up the project from scratch.
+## Descripción del Proyecto
 
-## ❗️ Important Links
+Este proyecto tiene como objetivo construir una aplicación sencilla para gestionar productos en una tienda. La aplicación es una Single Page Application (SPA) desarrollada con Vue.js 3 y Composition API. Los usuarios pueden ver una lista de productos, agregar nuevos, editar los existentes y eliminarlos.
 
-- 📄 [Docs](https://vuetifyjs.com/)
-- 🚨 [Issues](https://issues.vuetifyjs.com/)
-- 🏬 [Store](https://store.vuetifyjs.com/)
-- 🎮 [Playground](https://play.vuetifyjs.com/)
-- 💬 [Discord](https://community.vuetifyjs.com)
+## Requisitos del Proyecto
 
-## 💿 Install
+- **Vue.js 3** con Composition API.
+- **Vue Router** para la navegación entre vistas.
+- **Pinia** o **Vuex** para la gestión del estado si se desea implementar una lógica más compleja.
+- **Fetch API** o **Axios** para simular una API de productos.
+- **CSS** o **SCSS** para el estilizado de la aplicación.
 
-Set up your project using your preferred package manager. Use the corresponding command to install the dependencies:
+## Funcionalidades
 
-| Package Manager                                                | Command        |
-|---------------------------------------------------------------|----------------|
-| [yarn](https://yarnpkg.com/getting-started)                   | `yarn install` |
-| [npm](https://docs.npmjs.com/cli/v7/commands/npm-install)     | `npm install`  |
-| [pnpm](https://pnpm.io/installation)                          | `pnpm install` |
-| [bun](https://bun.sh/#getting-started)                        | `bun install`  |
+1. **Vista de Lista de Productos**:
+   - Mostrar una lista de productos con su nombre, precio, y una breve descripción.
+   - Cada producto tendrá opciones para editar o eliminar.
 
-After completing the installation, your environment is ready for Vuetify development.
+2. **Agregar Producto**:
+   - Formulario para agregar un nuevo producto con los campos: nombre, precio y descripción.
+   - Validación básica de formularios.
 
-## ✨ Features
+3. **Editar Producto**:
+   - Capacidad para seleccionar un producto y modificar sus detalles.
 
-- 🖼️ **Optimized Front-End Stack**: Leverage the latest Vue 3 and Vuetify 3 for a modern, reactive UI development experience. [Vue 3](https://v3.vuejs.org/) | [Vuetify 3](https://vuetifyjs.com/en/)
-- 🗃️ **State Management**: Integrated with [Pinia](https://pinia.vuejs.org/), the intuitive, modular state management solution for Vue.
-- 🚦 **Routing and Layouts**: Utilizes Vue Router for SPA navigation and vite-plugin-vue-layouts for organizing Vue file layouts. [Vue Router](https://router.vuejs.org/) | [vite-plugin-vue-layouts](https://github.com/JohnCampionJr/vite-plugin-vue-layouts)
-- ⚡ **Next-Gen Tooling**: Powered by Vite, experience fast cold starts and instant HMR (Hot Module Replacement). [Vite](https://vitejs.dev/)
-- 🧩 **Automated Component Importing**: Streamline your workflow with unplugin-vue-components, automatically importing components as you use them. [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)
+4. **Eliminar Producto**:
+   - Confirmación antes de eliminar un producto.
 
-These features are curated to provide a seamless development experience from setup to deployment, ensuring that your Vuetify application is both powerful and maintainable.
+5. **Detalles del Producto**:
+   - Vista individual del producto con más detalles.
 
-## 💡 Usage
+## Estructura del Proyecto
 
-This section covers how to start the development server and build your project for production.
+El proyecto está organizado en las siguientes carpetas:
 
-### Starting the Development Server
+- **src/components**:
+  - `ProductList.vue`: Componente que muestra la lista de productos.
+  - `ProductItem.vue`: Componente para un solo producto con botones para editar/eliminar.
+  - `ProductForm.vue`: Componente de formulario para agregar o editar productos.
 
-To start the development server with hot-reload, run the following command. The server will be accessible at [http://localhost:3000](http://localhost:3000):
+- **src/views**:
+  - `HomeView.vue`: Vista principal que muestra `ProductList`.
+  - `ProductDetailView.vue`: Vista para mostrar los detalles de un producto individual.
+  - `AddProductView.vue`: Vista con el formulario de `ProductForm` para agregar un producto.
+  - `EditProductView.vue`: Vista con el formulario de `ProductForm` para editar un producto.
 
-```bash
-yarn dev
-```
+- **src/store**:
+  - `index.js`: Gestión del estado con Pinia o Vuex para manejar la lista de productos.
 
-(Repeat for npm, pnpm, and bun with respective commands.)
+- **src/router**:
+  - Configuración de rutas para navegar entre las vistas.
 
-> Add NODE_OPTIONS='--no-warnings' to suppress the JSON import warnings that happen as part of the Vuetify import mapping. If you are on Node [v21.3.0](https://nodejs.org/en/blog/release/v21.3.0) or higher, you can change this to NODE_OPTIONS='--disable-warning=5401'. If you don't mind the warning, you can remove this from your package.json dev script.
+## Pasos para Implementar el Proyecto
 
-### Building for Production
+1. **Configurar el Proyecto**:
+   - Crear un nuevo proyecto Vue 3 usando Vue CLI o Vite.
+   - Instalar las dependencias necesarias como Vue Router y Pinia/Vuex.
 
-To build your project for production, use:
+2. **Desarrollo de Componentes**:
+   - Crear y organizar los componentes dentro de la carpeta `components`.
+   - Implementar la lógica de los componentes usando Composition API.
 
-```bash
-yarn build
-```
+3. **Configurar el Router**:
+   - Definir rutas para las vistas de la lista de productos, detalles, agregar y editar.
 
-(Repeat for npm, pnpm, and bun with respective commands.)
+4. **Gestionar el Estado**:
+   - Implementar la gestión del estado global de la aplicación (opcionalmente usando Pinia/Vuex).
 
-Once the build process is completed, your application will be ready for deployment in a production environment.
+5. **Estilizar la Aplicación**:
+   - Aplicar estilos básicos para hacer la aplicación visualmente atractiva.
 
-## 💪 Support Vuetify Development
-
-This project is built with [Vuetify](https://vuetifyjs.com/en/), a UI Library with a comprehensive collection of Vue components. Vuetify is an MIT licensed Open Source project that has been made possible due to the generous contributions by our [sponsors and backers](https://vuetifyjs.com/introduction/sponsors-and-backers/). If you are interested in supporting this project, please consider:
-
-- [Requesting Enterprise Support](https://support.vuetifyjs.com/)
-- [Sponsoring John on Github](https://github.com/users/johnleider/sponsorship)
-- [Sponsoring Kael on Github](https://github.com/users/kaelwd/sponsorship)
-- [Supporting the team on Open Collective](https://opencollective.com/vuetify)
-- [Becoming a sponsor on Patreon](https://www.patreon.com/vuetify)
-- [Becoming a subscriber on Tidelift](https://tidelift.com/subscription/npm/vuetify)
-- [Making a one-time donation with Paypal](https://paypal.me/vuetify)
-
-## 📑 License
-[MIT](http://opensource.org/licenses/MIT)
-
-Copyright (c) 2016-present Vuetify, LLC
