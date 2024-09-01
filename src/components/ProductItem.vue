@@ -37,7 +37,7 @@ const deleteProduct = async () => {
         </v-alert>
       </v-col>
     </v-row>
-    <v-row v-else-if="product">
+    <v-row v-else-if="product" align="center">
       <v-col cols="3">
         <v-img :src="product.image" width="200" height="200" class="mx-auto"></v-img>
       </v-col>
@@ -66,8 +66,7 @@ const deleteProduct = async () => {
 .container {
   width: 95%;
   margin: auto;
-  margin-top: 150px;
-  margin-bottom: 100px;
+  margin-top: 100px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

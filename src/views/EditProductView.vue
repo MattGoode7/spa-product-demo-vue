@@ -5,7 +5,6 @@ import { useProductStore } from '@/stores/productStore';
 import ProductForm from '@/components/ProductForm.vue';
 
 const route = useRoute();
-const router = useRouter();
 const productStore = useProductStore();
 const productId = route.params.id;
 const loading = ref(true);
